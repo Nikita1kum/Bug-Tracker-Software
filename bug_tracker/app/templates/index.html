@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-4">Bug List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bug in bugs %}
+        <tr>
+            <td>{{ bug.id }}</td>
+            <td>{{ bug.name }}</td>
+            <td>{{ bug.bug_type }}</td>
+            <td>{{ bug.bug_description }}</td>
+            <td>{{ bug.bug_priority }}</td>
+            <td>{{ bug.bug_status }}</td>
+            <td>
+                <a href="{{ url_for('report', bug_id=bug.id) }}" class="btn btn-info btn-sm">View</a>
+                <a href="{{ url_for('change_status', bug_id=bug.id) }}" class="btn btn-warning btn-sm">Change Status</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

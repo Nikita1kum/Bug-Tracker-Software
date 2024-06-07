@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-4">Change Bug Status</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="bug_status">Bug Status</label>
+        <select class="form-control" id="bug_status" name="bug_status" required>
+            <option value="Not Assigned Yet" {% if bug.bug_status == 'Not Assigned Yet' %}selected{% endif %}>Not Assigned Yet</option>
+            <option value="In Process" {% if bug.bug_status == 'In Process' %}selected{% endif %}>In Process</option>
+            <option value="Fixed" {% if bug.bug_status == 'Fixed' %}selected{% endif %}>Fixed</option>
+            <option value="Delivered" {% if bug.bug_status == 'Delivered' %}selected{% endif %}>Delivered</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Status</button>
+</form>
+{% endblock %}

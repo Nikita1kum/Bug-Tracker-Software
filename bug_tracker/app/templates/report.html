@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-4">Bug Report</h1>
+<ul class="list-group">
+    <li class="list-group-item"><strong>ID:</strong> {{ bug.id }}</li>
+    <li class="list-group-item"><strong>Name:</strong> {{ bug.name }}</li>
+    <li class="list-group-item"><strong>Type:</strong> {{ bug.bug_type }}</li>
+    <li class="list-group-item"><strong>Description:</strong> {{ bug.bug_description }}</li>
+    <li class="list-group-item"><strong>Priority:</strong> {{ bug.bug_priority }}</li>
+    <li class="list-group-item"><strong>Status:</strong> {{ bug.bug_status }}</li>
+    <li class="list-group-item"><strong>Created At:</strong> {{ bug.created_at }}</li>
+</ul>
+<a href="{{ url_for('index') }}" class="btn btn-secondary my-4">Back</a>
+{% endblock %}

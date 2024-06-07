@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="my-4">File a New Bug</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="bug_type">Bug Type</label>
+        <input type="text" class="form-control" id="bug_type" name="bug_type" required>
+    </div>
+    <div class="form-group">
+        <label for="bug_description">Bug Description</label>
+        <textarea class="form-control" id="bug_description" name="bug_description" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="bug_priority">Bug Priority</label>
+        <input type="text" class="form-control" id="bug_priority" name="bug_priority" required>
+    </div>
+    <button type="submit" class="btn btn-primary">File Bug</button>
+</form>
+{% endblock %}
